@@ -1,0 +1,16 @@
+{
+  "env": {
+    "NEXT_PUBLIC_SERVER_OPTION": "production",
+    "NEXT_PUBLIC_DEV_API_URL": "http://localhost:3000/api",
+    "NEXT_PUBLIC_API_URL": "https://queue-backend-zeta.vercel.app/api",
+    "NEXT_PUBLIC_LIFF_ID": "2008061316-GAoOlrly"
+  },
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_SERVER_OPTION": "production",
+      "NEXT_PUBLIC_DEV_API_URL": "http://localhost:3000/api",
+      "NEXT_PUBLIC_API_URL": "https://queue-backend-zeta.vercel.app/api",
+      "NEXT_PUBLIC_LIFF_ID": "2008061316-GAoOlrly"
+    }
+  }
+}

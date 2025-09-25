@@ -1,0 +1,336 @@
+@import 'tailwindcss';
+@config "../../tailwind.config.js";
+
+@font-face {
+  font-family: 'LINESeedSansTH';
+  src: url('https://cdn.jsdelivr.net/gh/ok1developer/NO1Money/LINESeedSansTH_W_Rg.woff')
+    format('woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'LINESeedSansTH';
+  src: url('https://cdn.jsdelivr.net/gh/ok1developer/NO1Money/LINESeedSansTH_W_Bd.woff')
+    format('woff');
+  font-weight: 700;
+}
+
+@keyframes pulseBorder {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 45, 150, 0.3);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 45, 150, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 45, 150, 0);
+  }
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes shining {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes floater {
+  0% {
+    transform: translateY(0%);
+    transition: ease 1s;
+  }
+  50% {
+    transform: translateY(1%);
+    transition: ease 1s;
+  }
+  100% {
+    transform: translateY(0%);
+    transition: ease 1s;
+  }
+}
+
+@keyframes pulseUp {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 77, 109, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 77, 109, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 77, 109, 0);
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --bg-dark: #1a103d;
+  --primary-pink: #ff2d96;
+  --primary-orange: #ff6b35;
+  --vibrant-purple: #8a4fff;
+  --soft-purple: #b399ff;
+  --bright-cyan: #4dd2ff;
+  --bright-green: #4ccd99;
+  --bright-yellow: #ffd700;
+  --primary-gradient: linear-gradient(135deg, var(--primary-pink), var(--primary-orange));
+  --secondary-gradient: linear-gradient(135deg, var(--vibrant-purple), var(--primary-pink));
+  --progress-gradient: linear-gradient(
+    90deg,
+    var(--bright-cyan) 0%,
+    var(--bright-green) 50%,
+    var(--bright-yellow) 100%
+  );
+  --light-text: #ffffff;
+  --secondary-text: #d0c8f0;
+  --card-bg-dark: #2a2155;
+  --content-bg: #ffffff;
+  --divider: #f0f0f0;
+  --danger-red: #ff4d6d;
+  --success-green: #4ccd99;
+  --info-blue: #4d8aff;
+  --font-main: 'LINESeedSansTH', sans-serif;
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.2);
+  --glow-pink: 0 0 15px rgba(255, 45, 150, 0.5);
+  --glow-purple: 0 0 15px rgba(138, 79, 255, 0.5);
+  --gold-accent: #ffd700;
+  --platinum-accent: #e5e4e2;
+
+  --neon-pink: 0 0 10px rgba(255, 45, 150, 0.8), 0 0 20px rgba(255, 45, 150, 0.6);
+  --neon-purple: 0 0 10px rgba(138, 79, 255, 0.8), 0 0 20px rgba(138, 79, 255, 0.6);
+  --neon-cyan: 0 0 10px rgba(77, 210, 255, 0.8), 0 0 20px rgba(77, 210, 255, 0.6);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  --color-theme-primary: #ff3366;
+  --color-theme-secondary: #9c27b0;
+  --color-theme-primary-disabled: #f8a5b7;
+  --color-theme-secondary-disabled: #e1bee7;
+}
+
+html {
+  height: 100%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body {
+  font-family: var(--font-main);
+  touch-action: manipulation;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  scrollbar-width: none;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-bg-dark: #1a103d;
+  --color-content-bg: #ffffff;
+  --color-light-pink-bg: #fff2f8;
+  --color-primary-pink: #ff2d96;
+  --color-primary-orange: #ff6b35;
+  --color-vibrant-purple: #8a4fff;
+  --color-soft-purple: #b399ff;
+  --color-bright-cyan: #4dd2ff;
+  --color-bright-green: #4ccd99;
+  --color-bright-yellow: #ffd700;
+  --color-light-text: #ffffff;
+  --color-secondary-text: #d0c8f0;
+  --color-card-bg-dark: #2a2155;
+  --color-divider: #f0f0f0;
+  --color-danger-red: #ff4d6d;
+  --color-success-green: #4ccd99;
+  --color-info-blue: #4d8aff;
+  --color-accent-gold: #ffd700;
+  --color-accent-platinum: #e5e4e2;
+
+  --gradient-primary: linear-gradient(135deg, var(--primary-pink), var(--primary-orange));
+  --gradient-secondary: linear-gradient(135deg, var(--vibrant-purple), var(--primary-pink));
+  --gradient-progress: linear-gradient(
+    90deg,
+    var(--bright-cyan) 0%,
+    var(--bright-green) 50%,
+    var(--bright-yellow) 100%
+  );
+
+  --animate-pulse-border: pulseBorder 2s infinite;
+  --animate-gradientBG: gradientBG 3s ease infinite;
+  --animate-shine: shining 3s infinite;
+  --animate-pulseUp: pulseUp 2s infinite;
+  --animate-shining: shining 8s infinite linear;
+  --animate-floating: floater 8s infinite;
+
+  --font-family-main: 'LINESeedSansTH', sans-serif;
+
+  --inset-shadow-md: inset 0 2px 3px rgba(0, 0, 0, 0.25);
+  --inset-shadow-lg: inset 0px 0px 24px 24px rgba(0, 0, 0, 24);
+
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.2);
+
+  --shadow-neon-pink: 0 10px 25px rgba(255, 45, 150, 0.4), var(--neon-pink);
+  --shadow-neon-pink-sm: 0 0 8px 4px rgba(255, 45, 150, 0.1), var(--neon-pink);
+  --shadow-neon-purple: 0 0 10px rgba(138, 79, 255, 0.8), 0 0 20px rgba(138, 79, 255, 0.6);
+  --shadow-neon-gold: 0 0 8px rgba(255, 215, 0, 0.5);
+
+  --drop-shadow-custom: 0 10px 25px rgba(255, 45, 150, 0.4), var(--neon-pink);
+  --drop-shadow-behind: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+
+  --effect-glow-pink: 0 0 15px rgba(255, 45, 150, 0.5);
+  --effect-glow-purple: 0 0 15px rgba(138, 79, 255, 0.5);
+  --effect-neon-pink: 0 0 10px rgba(255, 45, 150, 0.8), 0 0 20px rgba(255, 45, 150, 0.6);
+  --effect-neon-cyan: 0 0 10px rgba(77, 210, 255, 0.8), 0 0 20px rgba(77, 210, 255, 0.6);
+  --effect-glass-bg: rgba(255, 255, 255, 0.1);
+  --effect-glass-border: rgba(255, 255, 255, 0.2);
+  --effect-glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  --breakpoint-3xl: 1600px;
+}
+
+.gradient-bg {
+  background: linear-gradient(240deg, #4a148c, #000321, #1a237e);
+  background-size: 150% 150%;
+  animation: gradient-animation 24s ease infinite;
+}
+
+div,
+main,
+section {
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-icon {
+  text-shadow: var(--effect-neon-pink);
+}
+
+.cta-gradient-bg:not(:disabled)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    var(--primary-pink),
+    /* Make sure these CSS variables are defined */ var(--primary-orange),
+    var(--vibrant-purple)
+  );
+  background-size: 200% 200%;
+  z-index: -1;
+  animation: gradientBG 3s ease infinite;
+}
+
+.cta-button:disabled {
+  background: gray;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.cta-button:not(:disabled)::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 45%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 55%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: shine 3s infinite;
+}
+
+.mission-dots {
+  position: absolute;
+  bottom: -25px !important; /* à¸›à¸£à¸±à¸šà¸•à¸³à¹à¸«à¸™à¹ˆà¸‡à¸•à¸²à¸¡à¸•à¹‰à¸­à¸‡à¸à¸²à¸£ */
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
+/* Style à¸ˆà¸¸à¸” (dot) à¸—à¸µà¹ˆà¸¢à¸±à¸‡à¹„à¸¡à¹ˆà¸–à¸¹à¸à¹€à¸¥à¸·à¸­à¸ */
+.mission-dots li button:before {
+  font-size: 8px !important; /* à¸‚à¸™à¸²à¸”à¸‚à¸­à¸‡à¸ˆà¸¸à¸”à¹„à¸‚à¹ˆà¸›à¸¥à¸² */
+  color: #d1d5db !important; /* à¸ªà¸µà¹€à¸—à¸² */
+  opacity: 1 !important;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Style à¸ˆà¸¸à¸” (dot) à¸—à¸µà¹ˆà¸à¸³à¸¥à¸±à¸‡à¸–à¸¹à¸à¹€à¸¥à¸·à¸­à¸ (Active) */
+/* à¹€à¸£à¸²à¸ˆà¸°à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¸¡à¸±à¸™à¹ƒà¸«à¹‰à¹€à¸›à¹‡à¸™à¹à¸–à¸šà¸¢à¸²à¸§à¸ªà¸µà¸Šà¸¡à¸žà¸¹ */
+.mission-dots li.slick-active button:before {
+  height: 8px; /* à¸„à¸§à¸²à¸¡à¸ªà¸¹à¸‡à¸‚à¸­à¸‡à¹à¸–à¸š */
+  border-radius: 4px; /* à¸—à¸³à¹ƒà¸«à¹‰à¸‚à¸­à¸šà¸¡à¸™ */
+}
+
+.slick-slide > div {
+  margin: 8px;
+}
